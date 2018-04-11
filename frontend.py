@@ -2,17 +2,20 @@ from tkinter import * #import all from tkinter libery. allows use of b1.Button()
 import backend #import backend to use functions like backend.update()
 
 def get_selected_row(event): #finds index of selected item in Listbox
-    global selected_tuple
-    index=list1.curselection()[0] #finds index of tuple
-    selected_tuple=list1.get(index) #stores selected list item
-    e1.delete(0,END)
-    e1.insert(END,selected_tuple[1])
-    e2.delete(0,END)
-    e2.insert(END,selected_tuple[2])
-    e3.delete(0,END)
-    e3.insert(END,selected_tuple[3])
-    e4.delete(0,END)
-    e4.insert(END,selected_tuple[4])
+    try:
+        global selected_tuple
+        index=list1.curselection()[0] #finds index of tuple
+        selected_tuple=list1.get(index) #stores selected list item
+        e1.delete(0,END)
+        e1.insert(END,selected_tuple[1])
+        e2.delete(0,END)
+        e2.insert(END,selected_tuple[2])
+        e3.delete(0,END)
+        e3.insert(END,selected_tuple[3])
+        e4.delete(0,END)
+        e4.insert(END,selected_tuple[4])
+    except IndexError:
+        pass
 
 def view_command():
     list1.delete(0,END)
