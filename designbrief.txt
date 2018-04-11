@@ -1,0 +1,21 @@
+"""
+A program that stores a book's information:
+Title, Author
+Year, ISBN
+
+TODO:
+    6 buttons
+    4Entry
+    1Large text with scroll
+    4 labels (title,author,year,ISBN)
+
+
+User can:
+    View all records
+    Search an entry
+    Add entry
+    Update entry
+    Delete
+    Close
+
+"""
