@@ -13,6 +13,7 @@ def insert(title,author,year,isbn):
     cur.execute("INSERT INTO book VALUES(NULL,?,?,?,?)",(title,author,year,isbn))
     conn.commit()
     conn.close()
+    view()
 
 def view():
     conn=sqlite3.connect("books.db")
@@ -25,9 +26,8 @@ def view():
 def search_entry(title="",author="",year="",isbn=""):
     conn=sqlite3.connect("books.db")
     cur=conn.cursor()
-    cur.execute("SELECT * FROM book WHERE title=? OR author=? OR year=? OR ISBN =?",(title,author,year,isbn))
+    cur.execute("SELECT * FROM book WHERE title=? OR author=? OR year=? OR isbn =?",(title,author,year,isbn))
     rows=cur.fetchall()
-    conn.commit()
     conn.close()
     return rows
 

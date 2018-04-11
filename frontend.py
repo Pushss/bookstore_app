@@ -30,18 +30,16 @@ def add_command():
     list1.insert(END,(title_text.get(),author_text.get(),year_text.get(),isbn_text.get()))
 
 def update_command():
-    backend.update(title_text.get(),author_text.get(),year_text.get(),isbn_text.get())
+    backend.update(selected_tuple[0],title_text.get(),author_text.get(),year_text.get(),isbn_text.get())
+    view_command()
 
 def delete_command():
     backend.delete(selected_tuple[0])
-    list1.delete(0,END)
-    for row in backend.view():
-        list1.insert(END, row)
-
-def close_command():
-    list1.delete(0,END)
+    view_command()
 
 window=Tk() #create window
+
+window.wm_title("BookStore") #set window title
 
 #Group of Label() l1 to l4 postioned with grid(location placed with param's)
 l1=Label(window, text="Title: ") #Label (call to window, display text "Title:")
@@ -106,7 +104,7 @@ b4.grid(row=5,column=3)
 b5=Button(window, text="Delete",width=12,command=delete_command)
 b5.grid(row=6,column=3)
 
-b6=Button(window, text="Close",width=12,command=close_command)
+b6=Button(window, text="Close",width=12,command=window.destroy)
 b6.grid(row=7,column=3)
 
 window.mainloop() #allows window to remain open permentaly keep this at end of code
