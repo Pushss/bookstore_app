@@ -1,4 +1,5 @@
 from tkinter import * #import all from tkinter libery. allows use of b1.Button() instead of b1.tkinter.Button()
+import backend #import backend to use functions like backend.update()
 
 window=Tk() #create window
 
@@ -46,24 +47,24 @@ sb1.configure(command=list1.yview)
 
 #Group of Button() b1 to b6
 #create button (places in window, text="String",command=call's)
-b1=Button(window, text="View all",) #command=view_all)
+b1=Button(window, text="View all",width=12) #command=backend.view_all)
 #places the button on the window can define postion with .grid() or .pack()
 #.grid(grid can have row=0, column=0 for easier placement, rowspan=number
 b1.grid(row=2,column=3)
 
-b2=Button(window, text="Search Entry") #,command=search_entry)
+b2=Button(window, text="Search Entry",width=12) #,command=backend.search_entry)
 b2.grid(row=3,column=3)
 
-b3=Button(window, text="Add Entry") #,command=add_entry)
+b3=Button(window, text="Add Entry",width=12) #,command=backend.add_entry)
 b3.grid(row=4,column=3)
 
-b4=Button(window, text="Update") #,command=update)
+b4=Button(window, text="Update",width=12) #,command=backend.update)
 b4.grid(row=5,column=3)
 
-b5=Button(window, text="Delete") #,command=delete)
+b5=Button(window, text="Delete",width=12) #,command=backend.delete)
 b5.grid(row=6,column=3)
 
-b6=Button(window, text="Close") #,command=close)
+b6=Button(window, text="Close",width=12) #,command=backend.close)
 b6.grid(row=7,column=3)
 
 window.mainloop() #allows window to remain open permentaly keep this at end of code
