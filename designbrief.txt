@@ -4,10 +4,10 @@ Title, Author
 Year, ISBN
 
 TODO:
-    6 buttons
+    6Buttons
     4Entry
-    1Large text with scroll
-    4 labels (title,author,year,ISBN)
+    1Listbox
+    4Labels (title,author,year,ISBN)
 
 
 User can:
