@@ -29,6 +29,7 @@ def search_entry(title="",author="",year="",isbn=""):
     rows=cur.fetchall()
     conn.commit()
     conn.close()
+    return rows
 
 def delete(id):
     conn=sqlite3.connect("books.db")
@@ -44,9 +45,10 @@ def update(id,title,author,year,isbn):
     conn.commit()
     conn.close()
 
-
-#("UPDATE book SET title=?, author=?, year=?, WHERE ISBN =?",(title,author,year,isbn))
-
 connect()
+#insert("the Search","john snow",1998,342342)
+#insert("the earth","william wallace",1992,234232)
+#insert("the spirit","henrik larsson",2010,342342)
+
 #print(search_entry(year='3342'))
 print(view())
